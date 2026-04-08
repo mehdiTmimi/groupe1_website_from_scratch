@@ -4,8 +4,13 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   color: white;
   background-color: var(--red-color);
   display: flex;
@@ -49,4 +54,95 @@ header .lang-active {
 }
 header .lang-inactive {
   color: rgb(228 224 224 / 57%);
+}
+
+/* ============================ main ============================  */
+/* ============================ Section 1 ============================  */
+#section1 {
+  background-color: red;
+  height: 100vh; /* viewport height => hauteur de la fenetre*/
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 5%;
+  color: white;
+  gap: 40px;
+}
+#section1 h1 {
+  font-size: 4em;
+  text-transform: uppercase;
+}
+#section1 .infos-section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#section1 .infos-section1 .left-side-infos-section1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+#section1 .infos-section1 .left-side-infos-section1 .savoir-plus {
+  display: flex;
+  gap: 20px;
+}
+#section1 .infos-section1 .left-side-infos-section1 .savoir-plus span {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#section1 .infos-section1 .left-side-infos-section1 .savoir-plus a {
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#section1 .infos-section1 .progress-section1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#section1 .infos-section1 .progress-section1 button{
+    border: 0;
+    background: transparent;
+    color: inherit;
+}
+#section1 .infos-section1 #progress-bar{
+    background: rgba(211, 211, 211, 0.63);
+    display: block;
+    height: 2px;
+    margin-top: 10px;
+}
+#section1 .btn-section1{
+    display: flex;
+    gap: 20px;
+    font-size: 4em;
+}
+#section1 .btn-section1 button{
+    border: 0;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    color: inherit;
+    font-weight: bold;
+    background-size: cover;
+}
+#section1 .btn-section1 button img{
+    height: 30px;
+}
+.bg-red{
+    background: url(../img/card-red.png);
+}
+.bg-green{
+    background: url(../img/card-green.png);
 }
