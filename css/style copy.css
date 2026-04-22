@@ -194,15 +194,12 @@ header .lang-inactive {
 
 #section3 {
   display: flex;
-  margin: 5%;
+  padding: 5%;
   color: white;
-  position: relative;
-  justify-content: center;
 }
-#section3 article {
+#section3 article{
   height: 460px;
   padding: 40px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -210,46 +207,27 @@ header .lang-inactive {
   border-radius: 40px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  position: absolute;
-  width: 36%;
-  transition-duration: 1s;
-  background-size: cover;
+ 
 }
-#section3 article:hover {
-  width: 44%;
-  padding-right: 100px;
-}
-#section3 article:hover + article {
-  margin-left: 60px;
-}
-#section3 article img {
+#section3 article img{
   width: 70px;
 }
 
-#section3 article h2 {
+#section3 article h2{
   font-size: 2em;
   margin-bottom: 30px;
+  
 }
-#section3 article p {
+#section3 article p{
   font-size: 1.2em;
 }
-article.licence-caf-article {
+article.licence-caf-article{ 
+  
   background-image: url(../img/card-red.png);
-  left: 0;
 }
-article.licence-caf-article:hover{
-   background-image: url(../img/card-content-1.png);
-}
-article.formation-dtn-article {
+article.formation-dtn-article{ 
   background-image: url(../img/card-black.png);
 }
-article.formation-dtn-article:hover {
-  background-image: url(../img/card-content-2.png);
-}
-article.carte-entraineur-article {
-  right: 0;
+article.carte-entraineur-article{ 
   background-image: url(../img/card-green.png);
-}
-article.carte-entraineur-article:hover {
-  background-image: url(../img/card-content-3.png);
 }
