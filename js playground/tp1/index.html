@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur de Distance</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/utils.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="brand">
+                <div class="brand-mark">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12h18"></path>
+                        <path d="M3 12l4-4"></path>
+                        <path d="M3 12l4 4"></path>
+                        <path d="M21 12l-4-4"></path>
+                        <path d="M21 12l-4 4"></path>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>Distance</h1>
+                    <span>Converter Suite</span>
+                </div>
+            </div>
+            <div class="badge">v1.0 — Premium</div>
+        </header>
+
+        <main class="grid">
+            <section class="card converter">
+                <div class="card-head">
+                    <div>
+                        <h2>Conversion</h2>
+                        <p>Saisissez une valeur et choisissez les unités.</p>
+                    </div>
+                    <span class="dot-status">
+                        <span class="dot"></span>
+                        Prêt
+                    </span>
+                </div>
+
+                <div class="field">
+                    <label for="value">Valeur à convertir</label>
+                    <div class="input-wrap">
+                        <input id="value" type="number" placeholder="0.00" step="any">
+                        <span class="input-suffix">unité</span>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field">
+                        <label for="from">Unité de départ</label>
+                        <div class="select-wrap">
+                            <select id="from">
+                                <option value="mm">Millimètre (mm)</option>
+                                <option value="cm">Centimètre (cm)</option>
+                                <option value="m" selected>Mètre (m)</option>
+                                <option value="km">Kilomètre (km)</option>
+                                <option value="in">Pouce (in)</option>
+                                <option value="ft">Pied (ft)</option>
+                                <option value="yd">Yard (yd)</option>
+                                <option value="mi">Mile (mi)</option>
+                                <option value="nmi">Mille marin (nmi)</option>
+                            </select>
+                            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+
+                    <div class="swap" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h13"></path>
+                            <path d="M7 7l4-4"></path>
+                            <path d="M7 7l4 4"></path>
+                            <path d="M17 17H4"></path>
+                            <path d="M17 17l-4-4"></path>
+                            <path d="M17 17l-4 4"></path>
+                        </svg>
+                    </div>
+
+                    <div class="field">
+                        <label for="to">Unité d'arrivée</label>
+                        <div class="select-wrap">
+                            <select id="to">
+                                <option value="mm">Millimètre (mm)</option>
+                                <option value="cm">Centimètre (cm)</option>
+                                <option value="m">Mètre (m)</option>
+                                <option value="km" selected>Kilomètre (km)</option>
+                                <option value="in">Pouce (in)</option>
+                                <option value="ft">Pied (ft)</option>
+                                <option value="yd">Yard (yd)</option>
+                                <option value="mi">Mile (mi)</option>
+                                <option value="nmi">Mille marin (nmi)</option>
+                            </select>
+                            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <div class="result-label">Résultat</div>
+                    <div class="result-value">
+                        <span class="result-number">0</span>
+                        <span class="result-unit">km</span>
+                    </div>
+                    <div class="result-meta">1 m = 0.001 km</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                        Convertir
+                    </button>
+                    <button class="btn btn-ghost" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"></path><polyline points="3 4 3 10 9 10"></polyline></svg>
+                        Réinitialiser
+                    </button>
+                </div>
+            </section>
+
+            <section class="card history">
+                <div class="card-head">
+                    <div>
+                        <h2>Historique</h2>
+                        <p>Vos dernières conversions effectuées.</p>
+                    </div>
+                    <button class="btn btn-mini" type="button">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path></svg>
+                        Vider
+                    </button>
+                </div>
+
+                <ul  class="history-list">
+                    <!-- <li class="history-item">
+                        <div class="history-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                        </div>
+                        <div class="history-body">
+                            <div class="history-line">
+                                <span class="from-pill">1 500 m</span>
+                                <span class="arrow">→</span>
+                                <span class="to-pill">1.5 km</span>
+                            </div>
+                            <div class="history-meta">Il y a 2 minutes</div>
+                        </div>
+                        <span class="history-tag">métrique</span>
+                    </li>
+
+                    <li class="history-item">
+                        <div class="history-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                        </div>
+                        <div class="history-body">
+                            <div class="history-line">
+                                <span class="from-pill">10 mi</span>
+                                <span class="arrow">→</span>
+                                <span class="to-pill">16.0934 km</span>
+                            </div>
+                            <div class="history-meta">Il y a 12 minutes</div>
+                        </div>
+                        <span class="history-tag impérial">impérial</span>
+                    </li>
+
+                    <li class="history-item">
+                        <div class="history-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                        </div>
+                        <div class="history-body">
+                            <div class="history-line">
+                                <span class="from-pill">42 ft</span>
+                                <span class="arrow">→</span>
+                                <span class="to-pill">12.8016 m</span>
+                            </div>
+                            <div class="history-meta">Il y a 1 heure</div>
+                        </div>
+                        <span class="history-tag impérial">impérial</span>
+                    </li>
+
+                    <li class="history-item">
+                        <div class="history-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                        </div>
+                        <div class="history-body">
+                            <div class="history-line">
+                                <span class="from-pill">200 cm</span>
+                                <span class="arrow">→</span>
+                                <span class="to-pill">2 m</span>
+                            </div>
+                            <div class="history-meta">Hier</div>
+                        </div>
+                        <span class="history-tag">métrique</span>
+                    </li>
+
+                    <li class="history-item">
+                        <div class="history-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                        </div>
+                        <div class="history-body">
+                            <div class="history-line">
+                                <span class="from-pill">5 nmi</span>
+                                <span class="arrow">→</span>
+                                <span class="to-pill">9.26 km</span>
+                            </div>
+                            <div class="history-meta">Hier</div>
+                        </div>
+                        <span class="history-tag marin">marin</span>
+                    </li> -->
+                </ul>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <span>© 2026 Distance Converter Suite</span>
+            <span class="dot-sep">•</span>
+            <span>Conçu avec soin</span>
+        </footer>
+    </div>
+</body>
+</html>
