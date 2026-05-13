@@ -10,7 +10,7 @@ convertBtn.addEventListener('click', () => {
     if (valueStart == "")
         return alert("veuillez saisir une valeur")
     valueStart = parseFloat(valueStart)
-    if(valueStart==NaN)
+    if (valueStart == NaN)
         return alert("veuillez saisir un nombre")
     //calcul //valueStart, uniteStart, valueTarget, uniteTarget
     let ratioDepart = parseFloat(fromUnitValue.split(" ")[1])
@@ -21,8 +21,14 @@ convertBtn.addEventListener('click', () => {
     let uniteTarget = toUnitValue.split(" ")[0]
 
     let data = {
-        valueStart, uniteStart, uniteTarget,valueTarget
+        valueStart, uniteStart, uniteTarget, valueTarget
     }
     addToHistory_version2(data)
     viderForm()
 })
+swapDiv.addEventListener('click', () => {
+    let temp = toUnit.value
+    toUnit.value = fromUnit.value
+    fromUnit.value = temp
+})
+viderBtn.addEventListener('click', () => listHistory.innerHTML = "")
