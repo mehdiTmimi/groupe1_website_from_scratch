@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertisseur de Distance</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/utils.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
+
 <body>
     <div class="app">
         <header class="app-header">
             <div class="brand">
                 <div class="brand-mark">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path d="M3 12h18"></path>
                         <path d="M3 12l4-4"></path>
                         <path d="M3 12l4 4"></path>
@@ -44,32 +48,36 @@
                 <div class="field">
                     <label for="value">Valeur à convertir</label>
                     <div class="input-wrap">
-                        <input id="value" type="number" placeholder="0.00" step="any">
+                        <input id="valueConversion" type="number" placeholder="0.00" step="any">
                         <span class="input-suffix">unité</span>
                     </div>
                 </div>
 
                 <div class="field-row">
                     <div class="field">
-                        <label for="from">Unité de départ</label>
+                        <label for="fromUnit">Unité de départ</label>
                         <div class="select-wrap">
-                            <select id="from">
-                                <option value="mm">Millimètre (mm)</option>
-                                <option value="cm">Centimètre (cm)</option>
-                                <option value="m" selected>Mètre (m)</option>
-                                <option value="km">Kilomètre (km)</option>
-                                <option value="in">Pouce (in)</option>
-                                <option value="ft">Pied (ft)</option>
-                                <option value="yd">Yard (yd)</option>
-                                <option value="mi">Mile (mi)</option>
-                                <option value="nmi">Mille marin (nmi)</option>
+                            <select id="fromUnit">
+                                <option value="mm 1">Millimètre (mm)</option>
+                                <option value="cm 10">Centimètre (cm)</option>
+                                <option value="m 1000" selected>Mètre (m)</option>
+                                <option value="km 1000000">Kilomètre (km)</option>
+                                <option value="in 25.4">Pouce (in)</option>
+                                <option value="ft 304.8">Pied (ft)</option>
+                                <option value="yd 914.4">Yard (yd)</option>
+                                <option value="mi 1609344">Mile (mi)</option>
+                                <option value="nmi 1852000">Mille marin (nmi)</option>
                             </select>
-                            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </div>
                     </div>
 
                     <div class="swap" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M7 7h13"></path>
                             <path d="M7 7l4-4"></path>
                             <path d="M7 7l4 4"></path>
@@ -80,20 +88,23 @@
                     </div>
 
                     <div class="field">
-                        <label for="to">Unité d'arrivée</label>
+                        <label for="toUnit">Unité d'arrivée</label>
                         <div class="select-wrap">
-                            <select id="to">
-                                <option value="mm">Millimètre (mm)</option>
-                                <option value="cm">Centimètre (cm)</option>
-                                <option value="m">Mètre (m)</option>
-                                <option value="km" selected>Kilomètre (km)</option>
-                                <option value="in">Pouce (in)</option>
-                                <option value="ft">Pied (ft)</option>
-                                <option value="yd">Yard (yd)</option>
-                                <option value="mi">Mile (mi)</option>
-                                <option value="nmi">Mille marin (nmi)</option>
+                            <select id="toUnit">
+                                <option value="mm 1">Millimètre (mm)</option>
+                                <option value="cm 10">Centimètre (cm)</option>
+                                <option value="m 1000" selected>Mètre (m)</option>
+                                <option value="km 1000000">Kilomètre (km)</option>
+                                <option value="in 25.4">Pouce (in)</option>
+                                <option value="ft 304.8">Pied (ft)</option>
+                                <option value="yd 914.4">Yard (yd)</option>
+                                <option value="mi 1609344">Mile (mi)</option>
+                                <option value="nmi 1852000">Mille marin (nmi)</option>
                             </select>
-                            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -108,12 +119,20 @@
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-primary" type="button">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                    <button id="convertBtn" class="btn btn-primary" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 5v14"></path>
+                            <path d="M5 12h14"></path>
+                        </svg>
                         Convertir
                     </button>
-                    <button class="btn btn-ghost" type="button">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"></path><polyline points="3 4 3 10 9 10"></polyline></svg>
+                    <button id="resetBtn" class="btn btn-ghost" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+                            <polyline points="3 4 3 10 9 10"></polyline>
+                        </svg>
                         Réinitialiser
                     </button>
                 </div>
@@ -125,13 +144,17 @@
                         <h2>Historique</h2>
                         <p>Vos dernières conversions effectuées.</p>
                     </div>
-                    <button class="btn btn-mini" type="button">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path></svg>
+                    <button id="viderBtn" class="btn btn-mini" type="button">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                        </svg>
                         Vider
                     </button>
                 </div>
 
-                <ul  class="history-list">
+                <ul class="history-list">
                     <!-- <li class="history-item">
                         <div class="history-icon">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
@@ -217,4 +240,5 @@
         </footer>
     </div>
 </body>
+
 </html>
